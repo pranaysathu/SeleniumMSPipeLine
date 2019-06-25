@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -14,24 +16,41 @@ namespace Framework
 {
     public class DriverContainer
     {
-       public static IWebDriver driver = new ChromeDriver();
+
+        public static IWebDriver driver;
+      // public static IWebDriver driver = new ChromeDriver(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location),new ChromeOptions().AddArguments("headless"));
 
         public static IWebDriver webDriver()
         {
-            driver.Navigate().GoToUrl("https://www.jetbrains.com/teamcity/");
+            ChromeOptions options = new ChromeOptions();
+            options.AddArgument("headless");
+             driver = new ChromeDriver(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location),options);
 
-            driver.Manage().Window.Maximize();
+           
 
-            //#region SelfServiceIntialize
-            //InputSimulator In = new InputSimulator();
+            driver.Navigate().GoToUrl("https://sdcountycagov.sharepoint.com/sites/ipts-dev/SitePages/Home.aspx");
 
-            //In.Keyboard.TextEntry("Username");
-            //In.Keyboard.KeyPress(VirtualKeyCode.TAB);
-            //In.Keyboard.TextEntry("Password");
-            //In.Keyboard.KeyPress(VirtualKeyCode.TAB);
-            //In.Keyboard.KeyPress(VirtualKeyCode.RETURN);
+
+            //emain .send 90
+
+            //    next.clcik90;
+
+
+            //driver.Manage().Window.Maximize();
             //Thread.Sleep(2000);
-            //#endregion
+            //NavigateBrowser();
+            //Thread.Sleep(10000);
+
+            #region SelfServiceIntialize
+            InputSimulator In = new InputSimulator();
+
+            In.Keyboard.TextEntry("Username");
+            In.Keyboard.KeyPress(VirtualKeyCode.TAB);
+            In.Keyboard.TextEntry("Password");
+            In.Keyboard.KeyPress(VirtualKeyCode.TAB);
+            In.Keyboard.KeyPress(VirtualKeyCode.RETURN);
+            Thread.Sleep(2000);
+            #endregion
 
             return driver;
         }
@@ -41,8 +60,8 @@ namespace Framework
             await Task.Run(() =>
             {
 
-                driver.Url = "https://tbs.neudesic.com/";
-                driver.Manage().Window.Maximize();
+               // driver.Url = "https://tbs.neudesic.com/";
+               // driver.Manage().Window.Maximize();
 
             });
         }

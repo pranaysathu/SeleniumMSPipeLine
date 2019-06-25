@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace Framework
 {
+    /// <summary>
+    /// Basic Test for TestBase
+    /// </summary>
     public class TestBase
     {
         public IWebDriver driver = DriverContainer.webDriver();
