@@ -33,9 +33,3 @@ steps:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
 
-- script: dotnet test <SelfService> --logger trx
-- task: PublishTestResults@2
-  condition: succeededOrFailed()
-  inputs:
-    testRunner: NUnit
-    testResultsFiles: '**/*.trx'
