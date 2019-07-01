@@ -57,6 +57,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PageObjects\MyWorkSpacePage.cs" />
+    <Compile Include="PageObjects\ReportsPage.cs" />
+    <Compile Include="PageObjects\SharePointAdHocPage.cs" />
     <Compile Include="Tests\BasicTests.cs" />
     <Compile Include="PageObjects\DriverContainer.cs" />
     <Compile Include="PageObjects\Pageclass.cs" />

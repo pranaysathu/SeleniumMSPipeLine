@@ -12,7 +12,7 @@ using OpenQA.Selenium.Remote;
 using WindowsInput;
 using WindowsInput.Native;
 
-namespace Framework
+namespace SelfService
 {
     public class DriverContainer
     {
@@ -22,24 +22,20 @@ namespace Framework
 
         public static IWebDriver webDriver()
         {
-            ChromeOptions options = new ChromeOptions();
-            options.AddArgument("headless");
-             driver = new ChromeDriver(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location),options);
-
+            //ChromeOptions options = new ChromeOptions();
+            //options.AddArgument("headless");
+            //driver = new ChromeDriver(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location),options);
+            driver = new ChromeDriver();
            
 
             driver.Navigate().GoToUrl("https://sdcountycagov.sharepoint.com/sites/ipts-dev/SitePages/Home.aspx");
 
 
-            //emain .send 90
 
-            //    next.clcik90;
-
-
-            //driver.Manage().Window.Maximize();
+            driver.Manage().Window.Maximize();
             //Thread.Sleep(2000);
             //NavigateBrowser();
-            //Thread.Sleep(10000);
+            Thread.Sleep(10000);
 
             #region SelfServiceIntialize
             InputSimulator In = new InputSimulator();

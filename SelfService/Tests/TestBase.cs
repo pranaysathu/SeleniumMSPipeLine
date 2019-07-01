@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Framework
+namespace SelfService
 {
     /// <summary>
     /// Basic Test for TestBase
@@ -13,14 +13,25 @@ namespace Framework
     
     public class TestBase
     {
-        public IWebDriver driver = DriverContainer.webDriver();
-        private Pageclass pageClass;
-        //Getewy for Pageclass
-        public Pageclass pageclassobj
+        public IWebDriver driver = DriverContainer.webDriver();      
+
+        private MyWorkSpacePage workSpacePageClass;
+
+        public MyWorkSpacePage WorkSpavePageobj
         {
             get
             {
-                return new Pageclass();
+                return new MyWorkSpacePage();
+            }
+        }
+
+        private SharePointAdHocPage sharePointPage;
+
+        public SharePointAdHocPage SharePointPageobj
+        {
+            get
+            {
+                return new SharePointAdHocPage();
             }
         }
     }

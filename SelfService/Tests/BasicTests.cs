@@ -6,25 +6,23 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Framework
+namespace SelfService
 {
     [TestFixture]
     public class BasicTests : TestBase
     {
         [Test]
-        public void FrameworkTest()
+        public void EmbedTest()
         {
-            var driver = this.driver;
-            //int a = 5 + 9;
-            //Thread.Sleep(5000);
-            //pageclassobj.element.Click();
-            //Thread.Sleep(10000);
+            WorkSpavePageobj.SelectWorkSpace("IPTS Workspace");
+            var Path = WorkSpavePageobj.OpenReport("reportName").ReportEmbededMode();
+            driver.Navigate().GoToUrl(Path);
+            SharePointPageobj.openReport();
         }
-
         
 
         [TearDown]
-        public void TearDwo()
+        public void TearDown()
         {
             driver.Quit();
         }
