@@ -3,3 +3,7 @@
 ################################################################################
 
 /.vs
+/SelfService/bin/Debug/TestData/SelfService.xlsx
+/SelfService/bin/Debug
+/SelfService/obj/Debug
+/SelfService/TestData
