@@ -20,35 +20,49 @@ namespace SelfService
         public static IWebDriver driver;
       // public static IWebDriver driver = new ChromeDriver(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location),new ChromeOptions().AddArguments("headless"));
 
-        public static IWebDriver webDriver()
-        {
-            //ChromeOptions options = new ChromeOptions();
-            //options.AddArgument("headless");
-            //driver = new ChromeDriver(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location),options);
-            driver = new ChromeDriver();
+        //public static IWebDriver webDriver()
+        //{
+        //    //ChromeOptions options = new ChromeOptions();
+        //    //options.AddArgument("headless");
+        //    //driver = new ChromeDriver(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location),options);
+        //    driver = new ChromeDriver();
            
 
-            driver.Navigate().GoToUrl("https://sdcountycagov.sharepoint.com/sites/ipts-dev/SitePages/Home.aspx");
+        //    driver.Navigate().GoToUrl("https://sdcountycagov.sharepoint.com/sites/ipts-dev/SitePages/Home.aspx");
+
+
+
+        //    driver.Manage().Window.Maximize();
+        //    //Thread.Sleep(2000);
+        //    //NavigateBrowser();
+        //    Thread.Sleep(10000);
+
+        //    #region SelfServiceIntialize
+        //    InputSimulator In = new InputSimulator();
+
+        //    In.Keyboard.TextEntry("Username");
+        //    In.Keyboard.KeyPress(VirtualKeyCode.TAB);
+        //    In.Keyboard.TextEntry("Password");
+        //    In.Keyboard.KeyPress(VirtualKeyCode.TAB);
+        //    In.Keyboard.KeyPress(VirtualKeyCode.RETURN);
+        //    Thread.Sleep(2000);
+        //    #endregion
+
+        //    return driver;
+        //}
+
+
+        public static IWebDriver webDriver()
+        {
+            driver = new ChromeDriver();
+
+
+            driver.Navigate().GoToUrl("https://www.whatsapp.com/");
 
 
 
             driver.Manage().Window.Maximize();
-            //Thread.Sleep(2000);
-            //NavigateBrowser();
-            Thread.Sleep(10000);
-
-            #region SelfServiceIntialize
-            InputSimulator In = new InputSimulator();
-
-            In.Keyboard.TextEntry("Username");
-            In.Keyboard.KeyPress(VirtualKeyCode.TAB);
-            In.Keyboard.TextEntry("Password");
-            In.Keyboard.KeyPress(VirtualKeyCode.TAB);
-            In.Keyboard.KeyPress(VirtualKeyCode.RETURN);
             Thread.Sleep(2000);
-            #endregion
-
-            return driver;
         }
 
         public static async Task NavigateBrowser()
