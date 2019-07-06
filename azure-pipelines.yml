@@ -32,11 +32,11 @@ steps:
   inputs:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
-
 - task: VSTest@2
   inputs:
     testSelector: 'testAssemblies'
-    testAssemblyVer2: '**\SelfService.dll
+    testAssemblyVer2: '**\*test*.dll
+      **\$(BuildConfiguration)\*\*SelfService.dll
       !**\*TestAdapter.dll
       !**\obj\**'
     searchFolder: '$(System.DefaultWorkingDirectory)'
@@ -47,3 +47,4 @@ steps:
     testResultsFiles: '**/TESTR1.xml'
     mergeTestResults: true
     testRunTitle: 'First Test'
+
