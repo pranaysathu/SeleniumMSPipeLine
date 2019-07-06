@@ -36,8 +36,7 @@ steps:
 - task: VSTest@2
   inputs:
     testSelector: 'testAssemblies'
-    testAssemblyVer2: '**\*test*.dll
-      **\*SelfService*.dll
-      !**\*TestAdapter.dll
-      !**\obj\**'
+    testAssemblyVer2: 
+      SelfService.dll
+
     searchFolder: '$(System.DefaultWorkingDirectory)'
