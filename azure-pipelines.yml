@@ -50,7 +50,7 @@ steps:
 - task: PublishTestResults@2
   inputs:
     testResultsFormat: 'NUnit'
-    testResultsFiles: '**/TESTR1.xml'
+    testResultsFiles: '**/TESTR15.xml'
     mergeTestResults: true
     testRunTitle: 'First Test'
 
