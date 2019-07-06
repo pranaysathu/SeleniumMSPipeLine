@@ -63,6 +63,7 @@ namespace SelfService
 
             driver.Manage().Window.Maximize();
             Thread.Sleep(2000);
+            return driver;
         }
 
         public static async Task NavigateBrowser()
