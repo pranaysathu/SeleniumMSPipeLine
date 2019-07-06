@@ -16,6 +16,7 @@ namespace SelfService
         [Test]
         public void EmbedTest()
         {
+            var r = WorkSpacePageobj;
             //WorkSpacePageobj.SelectWorkSpace("IPTS Workspace");
             //var Path = WorkSpacePageobj.OpenReport("reportName").ReportEmbededMode();
             //driver.Navigate().GoToUrl("Url");
@@ -26,17 +27,17 @@ namespace SelfService
         
        
 
-        [TearDown]
+       // [TearDown]
         public void TearDown()
         {
             driver.Quit();            
         }
     }
 
-    [TestFixture]
+   // [TestFixture]
     public class ExcelTestClass
     {
-        [Test]
+       // [Test]
         public void ExcelTest()
         {
 
