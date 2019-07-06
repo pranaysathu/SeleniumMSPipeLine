@@ -41,6 +41,12 @@ steps:
       !**\obj\**'
     searchFolder: '$(System.DefaultWorkingDirectory)'
 
+- task: DotNetCoreCLI@2
+  inputs:
+    command: test
+    projects: '**/*SelfService/*.csproj'
+    arguments: '--configuration $(buildConfiguration)'
+
 - task: PublishTestResults@2
   inputs:
     testResultsFormat: 'NUnit'
