@@ -51,7 +51,7 @@ namespace SelfService
         //    return driver;
         //}
 
-
+        //Newly created driver
         public static IWebDriver webDriver()
         {
             driver = new ChromeDriver();
