@@ -102,7 +102,7 @@ namespace SelfService
                 string icoFileName = row["iconFile"].ToString();
                 string installScript = row["installScript"].ToString();
             }
-
+//Comment to be  deleted
             xlApp.Quit();
         }
 
